@@ -9,6 +9,6 @@
 
 Был использован React-create-app, bootstrap, CSS без препроцессоров.
 
-Демо: https://distracted-chandrasekhar-443bfe.netlify.app/
 ***
+Демо: https://distracted-chandrasekhar-443bfe.netlify.app/
 Исходники: https://yadi.sk/d/aXMKe7IqRJmtVw
