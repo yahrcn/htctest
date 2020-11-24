@@ -18,7 +18,7 @@ const Header = () => {
     const [cookie, setCookie] = useCookies(["name", "password"]);
     const [name, setName] = useState("");
     const [checked, setChecked] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(cookie.name !== "");
+    const [isLoggedIn, setIsLoggedIn] = useState(cookie.name !== "null");
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
@@ -29,14 +29,16 @@ const Header = () => {
                 loginName.current.value,
                 loginPassword.current.value
             );
-        setIsLoggedIn({ isLoggedIn: true });
         if (loginPassword.current.value !== "") {
             setName(loginName.current.value);
+            setIsLoggedIn(true);
+            setChecked(false);
             handleClose();
         } else alert("Введите пароль.");
     };
+
     const handleLogoutClick = () => {
-        cookieOnChange("", "");
+        cookieOnChange(null, null);
         setIsLoggedIn(false);
     };
 
@@ -46,7 +48,6 @@ const Header = () => {
     };
 
     const cookieOnChange = (newName, newPassword) => {
-        setName("");
         setCookie("name", newName, { path: "/" });
         setCookie("password", newPassword, { path: "/" });
     };
@@ -62,9 +63,8 @@ const Header = () => {
     const handleLoginNameBlur = () => {
         const changeName = document.getElementById("login-name");
         const inputChangeName = document.getElementById("login-name-input");
-        if (checked && loginPassword.current.value !== "")
+        if (cookie.name !== "null")
             cookieOnChange(inputChangeName.value, cookie.password);
-
         setName(inputChangeName.value);
         changeName.style.display = "inline-block";
         inputChangeName.style.display = "none";
@@ -110,12 +110,16 @@ const Header = () => {
                                     id="login-name"
                                     onClick={handleLoginNameClick}
                                 >
-                                    {cookie.name !== "" ? cookie.name : name}
+                                    {cookie.name !== "null"
+                                        ? cookie.name
+                                        : name}
                                 </span>
                                 <input
                                     type="text"
                                     defaultValue={
-                                        cookie.name !== "" ? cookie.name : name
+                                        cookie.name !== "null"
+                                            ? cookie.name
+                                            : name
                                     }
                                     id="login-name-input"
                                     className="login-name-input"
