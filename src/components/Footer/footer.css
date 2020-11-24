@@ -1,0 +1,50 @@
+footer {
+    margin-top: 72px;
+    background-color: #f2f2f2;
+}
+
+.footer-text {
+    padding-top: 22px;
+    color: #333;
+}
+
+.footer-text p {
+    margin: 0;
+}
+
+.footer-text p:not(:last-child) {
+    padding-bottom: 6px;
+}
+
+.footer-text a {
+    color: #333 !important;
+}
+
+.footer-text p:last-child a {
+    font-weight: 500 !important;
+    color: #1f4766 !important;
+    padding-top: 4px;
+}
+
+.footer-text p:last-child {
+    padding-bottom: 16px;
+}
+
+.footer-logo {
+    float: left;
+    margin-top: 28px;
+    margin-right: 40px;
+}
+
+@media (max-width: 995px) {
+    .footer-logo {
+        display: block;
+        float: none;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+
+    .footer-text {
+        text-align: center;
+    }
+}
