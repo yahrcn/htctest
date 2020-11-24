@@ -29,10 +29,11 @@ const Header = () => {
                 loginName.current.value,
                 loginPassword.current.value
             );
-        setName(loginName.current.value);
         setIsLoggedIn({ isLoggedIn: true });
-        if (loginPassword.current.value !== "") handleClose();
-        else alert("Введите пароль.");
+        if (loginPassword.current.value !== "") {
+            setName(loginName.current.value);
+            handleClose();
+        } else alert("Введите пароль.");
     };
     const handleLogoutClick = () => {
         cookieOnChange("", "");
@@ -63,6 +64,7 @@ const Header = () => {
         const inputChangeName = document.getElementById("login-name-input");
         if (checked && loginPassword.current.value !== "")
             cookieOnChange(inputChangeName.value, cookie.password);
+
         setName(inputChangeName.value);
         changeName.style.display = "inline-block";
         inputChangeName.style.display = "none";
