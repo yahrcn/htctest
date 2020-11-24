@@ -1,0 +1,130 @@
+* {
+    box-shadow: none !important;
+}
+
+input {
+    max-width: 320px !important;
+    margin-right: 32px !important;
+    font-weight: 500 !important;
+    background: none;
+    border: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid #333333 !important;
+    outline: none !important;
+}
+
+input::placeholder {
+    font-weight: 400 !important;
+}
+
+.form-inline input {
+    width: 100% !important;
+}
+
+.link-btn {
+    font-weight: 500 !important;
+    color: #e5261e !important;
+}
+
+.login-btn {
+    padding: 10px 32px !important;
+    font-weight: 500;
+}
+
+.login-btn:hover {
+    background: #cc221b;
+}
+
+.modal-header {
+    margin: 36px auto 0 auto;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.modal-title {
+    padding: 0 !important;
+    font-size: 28px !important;
+}
+
+.modal-body {
+    padding: 36px !important;
+}
+
+.modal-body > input {
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-bottom: 24px;
+}
+
+.remember-input {
+    margin-right: 8px !important;
+}
+
+.remember {
+    cursor: pointer;
+}
+
+.remember input {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    left: 36px;
+    margin-top: 3px;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+.remember:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.remember input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.remember .checkmark:after {
+    left: 4.87px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid #e5261e;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.modal-footer {
+    border: none !important;
+}
+
+.modal-footer .login-btn {
+    margin: 0 auto 36px auto !important;
+}
+
+.login-name {
+    margin-right: 16px;
+    font-weight: 500;
+}
+
+.login-name-input {
+    display: none;
+    width: auto;
+    max-width: 120px !important;
+    margin-right: 0 !important;
+}
+
+.close {
+    display: none !important;
+}
