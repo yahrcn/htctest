@@ -61,7 +61,8 @@ const Header = () => {
     const handleLoginNameBlur = () => {
         const changeName = document.getElementById("login-name");
         const inputChangeName = document.getElementById("login-name-input");
-        if (checked) cookieOnChange(inputChangeName.value, cookie.password);
+        if (checked && loginPassword.current.value !== "")
+            cookieOnChange(inputChangeName.value, cookie.password);
         setName(inputChangeName.value);
         changeName.style.display = "inline-block";
         inputChangeName.style.display = "none";
